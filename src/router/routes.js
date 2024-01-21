@@ -1,10 +1,12 @@
 const routes = [
   {
     path: "/smart/",
-    exact: true,
     component: () => import("layouts/LessonLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/LessonWelcomePage.vue") },
+      {
+        path: "lessons",
+        component: () => import("pages/LessonWelcomePage.vue"),
+      },
       {
         path: "lessons/:lessonId",
         component: () => import("pages/LessonPage.vue"),
@@ -12,10 +14,18 @@ const routes = [
     ],
   },
   {
-    path: "/wise/",
-    exact: true,
-    component: () => import("layouts/AltLessonLayout.vue"),
-    children: [{ path: "", component: () => import("pages/LessonPage.vue") }],
+    path: "/build/",
+    component: () => import("layouts/LessonBuilderLayout.vue"),
+    children: [
+      {
+        path: "lessons",
+        component: () => import("pages/builder/LessonBuilderPage.vue"),
+      },
+      {
+        path: "lessons/:lessonId",
+        component: () => import("pages/builder/LessonBuilderPage.vue"),
+      },
+    ],
   },
   {
     path: "/",

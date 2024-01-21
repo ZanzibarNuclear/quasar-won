@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR fFf">
+    <q-header reveal elevated class="bg-primary text-dark">
       <q-toolbar>
         <q-btn
           flat
@@ -11,16 +11,25 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Bah </q-toolbar-title>
+        <q-toolbar-title>
+          <q-avatar>
+            <img src="~/assets/Zanzibar.svg" />
+          </q-avatar>
+          Zanzi's World of Nuclear Energy
+        </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>Zanzi's App v0.1</div>
+        <q-btn dense flat round icon="person" @click="toggleAccountDropdown" />
+        <div v-if="accountDropdownOpen">
+          <account-menu-dropdown v-if="loggedIn" />
+          <sign-in-menu-dropdown v-else />
+        </div>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
         <q-item-label header> Essential Links </q-item-label>
-
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
@@ -38,6 +47,8 @@
 <script>
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
+import AccountMenuDropdown from "src/components/AccountMenuDropdown.vue";
+import SignInMenuDropdown from "src/components/SignInMenuDropdown.vue";
 
 const linksList = [
   {
@@ -89,16 +100,28 @@ export default defineComponent({
 
   components: {
     EssentialLink,
+    AccountMenuDropdown,
+    SignInMenuDropdown,
   },
 
   setup() {
     const leftDrawerOpen = ref(false);
+    const accountDropdownOpen = ref(false);
+    const loggedIn = ref(false);
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
+      accountDropdownOpen,
+      loggedIn,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
+      },
+      toggleAccountDropdown() {
+        accountDropdownOpen.value = !accountDropdownOpen.value;
+      },
+      toggleLogin() {
+        loggedIn.value = !loggedIn.value;
       },
     };
   },

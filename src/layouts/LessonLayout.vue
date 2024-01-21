@@ -4,20 +4,28 @@
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <img src="/Zanzibar400x400.png" />
+            <img src="~/assets/Zanzibar.svg" />
           </q-avatar>
           Zanzi's World of Nuclear Energy
         </q-toolbar-title>
 
+        <div>Zanzi's App v0.1</div>
         <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+    <q-drawer
+      show-if-above
+      v-model="rightDrawerOpen"
+      side="right"
+      overlay
+      elevated
+    >
       <!-- drawer content -->
       <content-outline />
     </q-drawer>
 
+    <q-footer> </q-footer>
     <q-page-container>
       <router-view />
     </q-page-container>
