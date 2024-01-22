@@ -10,66 +10,6 @@
       :callToAction="feature.callToAction"
       :routeName="feature.routeName"
     />
-
-    <q-card class="my-card" flat bordered>
-      <q-item>
-        <q-item-section avatar>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-          </q-avatar>
-        </q-item-section>
-
-        <q-item-section>
-          <q-item-label>Title</q-item-label>
-          <q-item-label caption> Subhead </q-item-label>
-        </q-item-section>
-      </q-item>
-
-      <q-separator />
-
-      <q-card-section horizontal>
-        <q-card-section>
-          {{ lorem }}
-        </q-card-section>
-
-        <q-separator vertical />
-
-        <q-card-section class="col-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </q-card-section>
-      </q-card-section>
-    </q-card>
-
-    <q-card class="my-card">
-      <q-card-section horizontal>
-        <q-img class="col-5" src="https://cdn.quasar.dev/img/parallax1.jpg" />
-
-        <q-card-section>
-          {{ lorem }}
-        </q-card-section>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat> 5:30PM </q-btn>
-        <q-btn flat> 7:00PM </q-btn>
-        <q-btn flat color="primary"> Reserve </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card">
-      <q-card-section horizontal>
-        <q-img class="col" src="https://cdn.quasar.dev/img/parallax2.jpg" />
-
-        <q-card-actions vertical class="justify-around">
-          <q-btn flat round color="red" icon="favorite" />
-          <q-btn flat round color="accent" icon="bookmark" />
-          <q-btn flat round color="primary" icon="share" />
-        </q-card-actions>
-      </q-card-section>
-    </q-card>
   </div>
 </template>
 
@@ -80,7 +20,7 @@ const features = [
   {
     category: "forum",
     feature: "What Say You",
-    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    coverImage: "/images/speech-bubbles.png",
     purpose: "Long-form discussions for sharing ideas about nuclear energy.",
     callToAction: "Join In the Fun",
     routeName: "what-say-you",
@@ -88,7 +28,7 @@ const features = [
   {
     category: "learning",
     feature: "Daily Lessons",
-    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    coverImage: "/images/atomic-symbol.jpg",
     purpose:
       "Learn everything you need to know to understand how nuclear energy can be put to good use.",
     callToAction: "Start Learning",
@@ -97,26 +37,26 @@ const features = [
   {
     category: "events",
     feature: "News",
-    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    coverImage: "/images/Diablo-Canyon-power-plant.png",
     purpose: "Long-form discussions for sharing ideas about nuclear energy.",
     callToAction: "See the Latest",
     routeName: "news",
   },
   {
-    category: "fun",
-    feature: "Games",
-    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
-    purpose: "Long-form discussions for sharing ideas about nuclear energy.",
-    callToAction: "Play Now",
-    routeName: "games",
-  },
-  {
     category: "learning",
     feature: "Simulators",
-    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    coverImage: "/images/Cherenkov-radiation.jpg",
     purpose: "Try nuclear simulators - fun and educational.",
     callToAction: "Learn By Doing",
     routeName: "sims",
+  },
+  {
+    category: "fun",
+    feature: "Games",
+    coverImage: "/images/word-search.jpg",
+    purpose: "Long-form discussions for sharing ideas about nuclear energy.",
+    callToAction: "Play Now",
+    routeName: "games",
   },
 ];
 const lorem =
