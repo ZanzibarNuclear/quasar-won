@@ -1,37 +1,15 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md">
     <feature-card
-      category="Forum"
-      feature="What Say You"
-      coverImage="https://cdn.quasar.dev/img/parallax2.jpg"
-      purpose="Long-form discussions for sharing ideas about nuclear energy."
-      callToAction="Join In the Fun"
-      routeName="what-say-you"
+      v-for="feature in features"
+      :key="feature.feature"
+      :category="feature.category"
+      :feature="feature.feature"
+      :coverImage="feature.coverImage"
+      :purpose="feature.purpose"
+      :callToAction="feature.callToAction"
+      :routeName="feature.routeName"
     />
-    <q-card class="my-card" flat bordered>
-      <q-card-section horizontal>
-        <q-card-section class="q-pt-xs">
-          <div class="text-overline">Forum</div>
-          <div class="text-h5 q-mt-sm q-mb-xs">What Say You</div>
-          <div class="text-caption text-grey">
-            Long-form discussions for sharing ideas about nuclear energy.
-          </div>
-        </q-card-section>
-
-        <q-card-section class="col-5 flex flex-center">
-          <q-img
-            class="rounded-borders"
-            src="https://cdn.quasar.dev/img/parallax2.jpg"
-          />
-        </q-card-section>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions align="center">
-        <q-btn color="primary" glossy stretch> Join In </q-btn>
-      </q-card-actions>
-    </q-card>
 
     <q-card class="my-card" flat bordered>
       <q-item>
@@ -97,6 +75,50 @@
 
 <script setup>
 import FeatureCard from "src/components/FeatureCard.vue";
+
+const features = [
+  {
+    category: "forum",
+    feature: "What Say You",
+    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    purpose: "Long-form discussions for sharing ideas about nuclear energy.",
+    callToAction: "Join In the Fun",
+    routeName: "what-say-you",
+  },
+  {
+    category: "learning",
+    feature: "Daily Lessons",
+    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    purpose:
+      "Learn everything you need to know to understand how nuclear energy can be put to good use.",
+    callToAction: "Start Learning",
+    routeName: "lesson-welcome",
+  },
+  {
+    category: "events",
+    feature: "News",
+    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    purpose: "Long-form discussions for sharing ideas about nuclear energy.",
+    callToAction: "See the Latest",
+    routeName: "news",
+  },
+  {
+    category: "fun",
+    feature: "Games",
+    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    purpose: "Long-form discussions for sharing ideas about nuclear energy.",
+    callToAction: "Play Now",
+    routeName: "games",
+  },
+  {
+    category: "learning",
+    feature: "Simulators",
+    coverImage: "https://cdn.quasar.dev/img/parallax2.jpg",
+    purpose: "Try nuclear simulators - fun and educational.",
+    callToAction: "Learn By Doing",
+    routeName: "sims",
+  },
+];
 const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 </script>

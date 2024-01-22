@@ -5,6 +5,7 @@ const routes = [
     children: [
       {
         path: "lessons",
+        name: "lesson-welcome",
         component: () => import("pages/LessonWelcomePage.vue"),
       },
       {
@@ -28,21 +29,36 @@ const routes = [
     ],
   },
   {
-    path: "/what-say-you",
+    path: "/",
+    exact: true,
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
         path: "",
+        name: "home",
+        component: () => import("pages/IndexPage.vue"),
+      },
+      {
+        path: "/news",
+        name: "news",
+        component: () => import("pages/NuclearNewsPage.vue"),
+      },
+      {
+        path: "/what-say-you",
         name: "what-say-you",
         component: () => import("pages/WhatSayYouPage.vue"),
       },
+      {
+        path: "/sims",
+        name: "sims",
+        component: () => import("pages/SimulatorsPage.vue"),
+      },
+      {
+        path: "/games",
+        name: "games",
+        component: () => import("pages/GamesPage.vue"),
+      },
     ],
-  },
-  {
-    path: "/",
-    exact: true,
-    component: () => import("layouts/MainLayout.vue"),
-    children: [{ path: "", component: () => import("pages/IndexPage.vue") }],
   },
 
   // Always leave this as last one,
