@@ -28,6 +28,17 @@ const routes = [
     ],
   },
   {
+    path: "/what-say-you",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "what-say-you",
+        component: () => import("pages/WhatSayYouPage.vue"),
+      },
+    ],
+  },
+  {
     path: "/",
     exact: true,
     component: () => import("layouts/MainLayout.vue"),

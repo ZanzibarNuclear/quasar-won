@@ -1,6 +1,13 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md">
-    <feature-card />
+    <feature-card
+      category="Forum"
+      feature="What Say You"
+      coverImage="https://cdn.quasar.dev/img/parallax2.jpg"
+      purpose="Long-form discussions for sharing ideas about nuclear energy."
+      callToAction="Join In the Fun"
+      routeName="what-say-you"
+    />
     <q-card class="my-card" flat bordered>
       <q-card-section horizontal>
         <q-card-section class="q-pt-xs">

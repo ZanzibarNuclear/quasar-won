@@ -3,8 +3,8 @@
     <q-card-section horizontal>
       <q-card-section class="q-pt-xs">
         <div class="text-overline">{{ category }}</div>
-        <div class="text-h5 q-mt-sm q-mb-xs">{{ featureName }}</div>
-        <div class="text-caption text-grey">
+        <div class="text-h5 q-mt-sm q-mb-xs">{{ feature }}</div>
+        <div class="text-caption text-dark">
           {{ purpose }}
         </div>
       </q-card-section>
@@ -25,19 +25,20 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { defineProps } from "vue";
+import { useRouter } from "vue-router";
 
-const category = ref("Forum");
-const featureName = ref("What Say You");
-const coverImage = ref("https://cdn.quasar.dev/img/parallax2.jpg");
-const purpose = ref(
-  "Long-form discussions for sharing ideas about nuclear energy."
-);
-const callToAction = "Join In";
-const routeName = "what-say-you";
-const goTo = () => {
-  // navigate to routeName
-  alert(routeName);
+const props = defineProps([
+  "category",
+  "feature",
+  "coverImage",
+  "purpose",
+  "callToAction",
+  "routeName",
+]);
+const router = useRouter();
+const goTo = async () => {
+  router.push({ name: props.routeName });
 };
 </script>
 
