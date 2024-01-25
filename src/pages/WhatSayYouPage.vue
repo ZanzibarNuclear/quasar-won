@@ -5,7 +5,7 @@
     <div class="q-ma-md">
       <q-scroll-area style="height: 500px; max-width: 450px">
         <div
-          v-for="(comment, index) in comments"
+          v-for="(comment, index) in whatSayYou.messages"
           :key="index"
           class="q-py-xs box"
         >
@@ -19,10 +19,10 @@
 <script setup>
 import { ref } from 'vue'
 import WhatSayYouEditor from 'src/components/WhatSayYouEditor.vue'
+import { useWhatSayYouStore } from 'src/stores/whatsayyou'
 
-const comments = ref([])
-
-const handlePost = (comment) => comments.value.push(comment)
+const whatSayYou = useWhatSayYouStore()
+const handlePost = (comment) => whatSayYou.addMessage(comment)
 </script>
 
 <style scoped>

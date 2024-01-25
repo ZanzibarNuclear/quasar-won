@@ -5,7 +5,7 @@
         v-model="message"
         filled
         type="textarea"
-        @keydown.enter.exact.prevent="doIt"
+        v-on:keypress.ctrl.enter.exact.prevent="doIt"
       />
       <q-btn class="q-mt-md" push color="primary" label="Push" @click="doIt" />
     </div>
