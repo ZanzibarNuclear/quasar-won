@@ -20,8 +20,8 @@
 <script setup>
 import PrimaryToolbar from 'components/PrimaryToolbar.vue'
 import VerticalNavigationMenu from 'src/components/VerticalNavigationMenu.vue'
-import { useAppStatus } from 'stores/app-status'
 import { fabXTwitter } from '@quasar/extras/fontawesome-v6'
+import { useAppStatus } from 'stores/app-status'
 
 const appStatus = useAppStatus()
 
@@ -74,13 +74,13 @@ const linksList = [
     title: 'Open Source Code',
     caption: 'github.com/quasarframework',
     icon: 'code',
-    link: 'https://github.com/quasarframework',
+    link: 'https://github.com/ZanzibarNuclear',
   },
   {
     title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
+    caption: "Join Zanzibar's World of Nuclear Energy",
     icon: 'chat',
-    link: 'https://chat.quasar.dev',
+    link: 'https://discord.gg/XG8SWSCT',
   },
 ]
 </script>

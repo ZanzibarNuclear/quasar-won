@@ -1,6 +1,7 @@
 <template>
   <q-toolbar>
     <q-btn
+      v-if="!hideMenu"
       flat
       dense
       round
@@ -26,6 +27,12 @@
 <script setup>
 import { useAppStatus } from 'stores/app-status'
 const appStatus = useAppStatus()
+const props = defineProps({
+  hideMenu: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>
 
 <style lang="scss" scoped></style>
