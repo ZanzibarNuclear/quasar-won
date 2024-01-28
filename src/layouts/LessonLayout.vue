@@ -1,26 +1,10 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-dark">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="~/assets/Zanzibar.svg" />
-          </q-avatar>
-          Zanzi's World of Nuclear Energy
-        </q-toolbar-title>
-
-        <div>Zanzi's App v0.1</div>
-        <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
-      </q-toolbar>
+      <primary-toolbar />
     </q-header>
 
-    <q-drawer
-      show-if-above
-      v-model="rightDrawerOpen"
-      side="right"
-      overlay
-      elevated
-    >
+    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" elevated>
       <!-- drawer content -->
       <content-outline />
     </q-drawer>
@@ -33,12 +17,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import ContentOutline from "src/components/ContentOutline.vue";
+import { ref } from 'vue'
+import PrimaryToolbar from 'src/components/PrimaryToolbar.vue'
+import ContentOutline from 'src/components/ContentOutline.vue'
 
-const rightDrawerOpen = ref(false);
+const rightDrawerOpen = ref(false)
 
 function toggleRightDrawer() {
-  rightDrawerOpen.value = !rightDrawerOpen.value;
+  rightDrawerOpen.value = !rightDrawerOpen.value
 }
 </script>

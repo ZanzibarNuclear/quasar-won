@@ -10,9 +10,11 @@
     />
 
     <q-toolbar-title>
-      <q-avatar>
-        <img src="~/assets/Zanzibar.svg" />
-      </q-avatar>
+      <q-btn :to="{ name: 'home' }" flat dense>
+        <q-avatar>
+          <img src="~/assets/Zanzibar.svg" />
+        </q-avatar>
+      </q-btn>
       Zanzi's World of Nuclear Energy
     </q-toolbar-title>
 

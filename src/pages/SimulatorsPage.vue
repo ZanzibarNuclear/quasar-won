@@ -1,13 +1,13 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="text-h2">Run Simulators and See What If</div>
+    <div class="text-h2">Nuclear Simulations</div>
   </q-page>
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "SimulatorsPage",
-});
+  name: 'SimulatorsPage',
+})
 </script>

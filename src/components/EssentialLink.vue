@@ -13,6 +13,7 @@
 
 <script setup>
 import { computed } from 'vue'
+// import { fabXTwitter } from '@quasar/extras/fontawesome-v6'
 
 const props = defineProps({
   title: {
@@ -29,7 +30,11 @@ const props = defineProps({
   },
   icon: {
     type: String,
-    default: '',
+    default: null,
+  },
+  iconPath: {
+    type: String,
+    default: null,
   },
   route: {
     type: String,

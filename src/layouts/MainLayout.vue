@@ -9,14 +9,6 @@
         heading="Explore the World"
         :links="linksList"
       />
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
     </q-drawer>
 
     <q-page-container>
@@ -26,10 +18,10 @@
 </template>
 
 <script setup>
-import EssentialLink from 'components/EssentialLink.vue'
 import PrimaryToolbar from 'components/PrimaryToolbar.vue'
 import VerticalNavigationMenu from 'src/components/VerticalNavigationMenu.vue'
 import { useAppStatus } from 'stores/app-status'
+import { fabXTwitter } from '@quasar/extras/fontawesome-v6'
 
 const appStatus = useAppStatus()
 
@@ -41,6 +33,31 @@ const linksList = [
     route: 'what-say-you',
   },
   {
+    title: 'Nuclear News',
+    caption: 'Highlighting recent advances in nuclear technology and adoption',
+    icon: 'newspaper',
+    route: 'nuclear-news',
+  },
+  {
+    title: 'Daily Lessons',
+    caption: 'Understand more about nuclear energy one idea at a time',
+    icon: 'school',
+    route: 'daily-lessons',
+  },
+  {
+    title: 'Simulators',
+    caption:
+      'Little experiments for exploring the fundamental of nuclear energy',
+    icon: 'smart_toy',
+    route: 'nuclear-sims',
+  },
+  {
+    title: 'Fun and Games',
+    caption: 'Play and become familiar with ideas related to nuclear energy',
+    icon: 'games',
+    route: 'fun-and-games',
+  },
+  {
     title: "Zanzi's Nuclear Stack",
     caption: 'Essays by Zanzibar about nuclear energy',
     icon: 'article',
@@ -48,9 +65,10 @@ const linksList = [
   },
   {
     title: 'X / Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
+    caption: '@ZanzibarNuclear',
+    icon: fabXTwitter,
+    iconPath: '/assets/X_icon_2.svg',
+    link: 'https://twitter.com/ZanzibarNuclear',
   },
   {
     title: 'Open Source Code',
