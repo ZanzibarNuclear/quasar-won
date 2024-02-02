@@ -1,9 +1,9 @@
 {
-  "name": "zanzis-world-of-nuclear",
+  "name": "world-of-nuclear",
   "version": "0.0.1",
   "description": "For learning about the positive impact of nuclear energy",
-  "productName": "ZanzisWorldOfNuclearEnergy",
-  "author": "Dave Mount <davemount@gmail.com>",
+  "productName": "WorldOfNuclearEnergy",
+  "author": "Zanzibar Nuclear <zanzisworld42@gmail.com>",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
